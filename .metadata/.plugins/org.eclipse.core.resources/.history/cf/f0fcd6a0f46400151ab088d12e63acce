@@ -1,0 +1,190 @@
+package com.cs399.calculator;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+import android.widget.EditText;
+
+public class CalculatorActivity extends Activity 
+{
+	String str1, str2;
+	boolean onStr1;
+	Operation operation;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_calculator);
+        onStr1 = true;
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) 
+    {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.calculator, menu);
+        return true;
+    }
+    
+    private void setText(String string)
+    {	((EditText)findViewById(R.id.textBox)).setText(string);}
+    
+    public void add1(View view)
+    {	
+    	if(onStr1) str1 += "1";
+    	else str2 += "1";
+    	setText(onStr1 ? str1 : str2);
+    }
+    
+    public void add2(View view)
+    {	
+    	if(onStr1) str1 += "2";
+    	else str2 += "2";
+    	setText(onStr1 ? str1 : str2);
+    }
+    
+    public void add3(View view)
+    {	
+    	if(onStr1) str1 += "3";
+    	else str2 += "3";
+    	setText(onStr1 ? str1 : str2);
+    }
+    
+    public void add4(View view)
+    {	
+    	if(onStr1) str1 += "4";
+    	else str2 += "4";
+    	setText(onStr1 ? str1 : str2);
+    }
+    
+    public void add5(View view)
+    {	
+    	if(onStr1) str1 += "5";
+    	else str2 += "5";
+    	setText(onStr1 ? str1 : str2);
+    }
+    
+    public void add6(View view)
+    {	
+    	if(onStr1) str1 += "6";
+    	else str2 += "6";
+    	setText(onStr1 ? str1 : str2);
+    }
+    
+    public void add7(View view)
+    {	
+    	if(onStr1) str1 += "7";
+    	else str2 += "7";
+    	setText(onStr1 ? str1 : str2);
+    }
+    
+    public void add8(View view)
+    {	
+    	if(onStr1) str1 += "8";
+    	else str2 += "8";
+    	setText(onStr1 ? str1 : str2);
+    }
+    
+    public void add9(View view)
+    {	
+    	if(onStr1) str1 += "9";
+    	else str2 += "9";
+    	setText(onStr1 ? str1 : str2);
+    }
+    
+    public void add0(View view)
+    {	
+    	current += "0";
+    	setText();
+    }
+    
+    public void setAddition(View view)
+    {	
+    	operation = Operation.ADDITION;
+    	if(current == str2)
+    	{
+    		str1 = calculate(view);
+    		str2 = "";
+    	}
+    	current = str2;
+    	setText();
+    }
+    
+    public void setSubtraction(View view)
+    {	
+    	operation = Operation.SUBTRACTION;
+    	if(current == str2)
+    	{
+    		str1 = calculate(view);
+    		str2 = "";
+    	}
+    	current = str2;
+    	setText();
+    }
+    
+    public void setMultiplcation(View view)
+    {	
+    	operation = Operation.MULTIPLICATION;
+    	if(current == str2)
+    	{
+    		str1 = calculate(view);
+    		str2 = "";
+    	}
+    	current = str2;
+    	setText();
+    }
+    
+    public void setDivision(View view)
+    {	
+    	operation = Operation.DIVISION;
+    	if(current == str2)
+    	{
+    		str1 = calculate(view);
+    		str2 = "";
+    	}
+    	current = str2;
+    	setText();
+    }
+    
+    public void clear(View view)
+    {
+    	str1 = ""; str2 = "";
+    	current = str1;
+    }
+    
+    public void back(View view)
+    {
+    	try
+    	{current = current.substring(0, current.length()-1);}
+    	catch(IndexOutOfBoundsException i){}
+    }
+    
+    public String calculate(View view)
+    {
+    	final float num1 = Float.parseFloat(str1),
+    				num2 = Float.parseFloat(str2), value;
+		switch(operation)
+    	{
+    		case ADDITION:
+    			value = num1+num2;
+    			break;
+    		case SUBTRACTION:
+    			value = num1-num2;
+    			break;
+    		case MULTIPLICATION:
+    			value = num1*num2;
+    			break;
+    		//case DIVISION:
+    		default:
+    			value = num1/num2;
+    			break;
+    	}
+		EditText text = (EditText)this.findViewById(R.id.textBox);
+		String rval = Float.toString(value);
+		text.setText(rval);
+    	clear(view);
+    	return rval;
+    }
+}

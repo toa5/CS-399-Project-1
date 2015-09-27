@@ -1,0 +1,5 @@
+package com.cs399.calculator;
+
+public enum Operation {
+
+}

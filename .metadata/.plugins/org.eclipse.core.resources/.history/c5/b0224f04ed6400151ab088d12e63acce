@@ -1,0 +1,162 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.cs399.calculator.CalculatorActivity" >
+
+    <EditText
+        android1:id="@+id/editText1"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignParentEnd="true"
+        android1:layout_alignParentLeft="true"
+        android1:layout_alignParentRight="true"
+        android1:layout_alignParentStart="true"
+        android1:layout_alignParentTop="true"
+        android1:clickable="false"
+        android1:ems="10"
+        android1:inputType="text"
+        android1:minHeight="150dp" >
+
+        <requestFocus />
+    </EditText>
+
+    <Button android1:id="@+id/button1" 
+        android1:layout_width="wrap_content" 
+        android1:layout_height="wrap_content" 
+        android1:layout_alignLeft="@+id/editText1" 
+        android1:layout_alignStart="@+id/editText1" 
+        android1:layout_below="@+id/editText1" 
+        android1:text="@string/num_1" />
+    
+    <Button
+        android1:id="@+id/button2"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignBottom="@+id/button1"
+        android1:layout_toEndOf="@+id/button1"
+        android1:layout_toRightOf="@+id/button1"
+        android1:text="@string/num_2" />
+
+    <Button
+        android1:id="@+id/button3"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignTop="@+id/button2"
+        android1:layout_toRightOf="@+id/button2"
+        android1:layout_toEndOf="@+id/button2"
+        android1:text="@string/num_3" />
+
+    <Button
+        android1:id="@+id/button4"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignStart="@+id/button1"
+        android1:layout_alignLeft="@+id/button1"
+        android1:layout_below="@+id/button1"
+        android1:text="@string/num_4" />
+
+    <Button
+        android1:id="@+id/button5"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_toRightOf="@+id/button4"
+        android1:layout_toEndOf="@+id/button4"
+        android1:layout_below="@+id/button2"
+        android1:text="@string/num_5" />
+
+    <Button
+        android1:id="@+id/button6"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_toRightOf="@+id/button5"
+        android1:layout_toEndOf="@+id/button5"
+        android1:layout_below="@id/button3"
+        android1:text="@string/num_6" />
+
+    <Button
+        android1:id="@+id/button7"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignStart="@+id/button1"
+        android1:layout_alignLeft="@+id/button1"
+        android1:layout_below="@+id/button4"
+        android1:text="@string/num_7" />
+
+    <Button
+        android1:id="@+id/button8"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_below="@+id/button5"
+        android1:layout_toRightOf="@+id/button4"
+        android1:layout_toEndOf="@+id/button4"
+        android1:text="@string/num_8" />
+
+    <Button
+        android1:id="@+id/button9"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_toRightOf="@+id/button8"
+        android1:layout_toEndOf="@+id/button8"
+        android1:layout_below="@+id/button6"
+        android1:text="@string/num_9" />
+
+    <Button android1:id="@+id/buttonPlus" 
+        android1:layout_width="wrap_content" 
+        android1:layout_height="wrap_content" 
+        android1:layout_alignStart="@+id/button1" 
+        android1:layout_alignLeft="@+id/button1" 
+        android1:layout_below="@+id/button7" 
+        android1:text="@string/plus" />
+    
+    <Button
+        android1:id="@+id/button0"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_below="@+id/button7"
+        android1:layout_toRightOf="@+id/button7"
+        android1:layout_toEndOf="@+id/button7"
+        android1:text="@string/num_0" />
+    
+    <Button
+        android1:id="@+id/buttonMinus"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_toEndOf="@+id/button0"
+        android1:layout_toRightOf="@+id/button0"
+        android1:layout_below="@+id/button9"
+        android1:text="@string/minus" />
+
+    <Button
+        android1:id="@+id/buttonMultiply"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_alignStart="@+id/button1"
+        android1:layout_alignLeft="@+id/button1"
+        android1:layout_below="@+id/buttonPlus"
+        android1:text="@string/multiply" />
+    
+    <Button
+        android1:id="@+id/buttonClear"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_below="@+id/button0"
+        android1:layout_toRightOf="@+id/buttonMultiply"
+        android1:layout_toEndOf="@+id/buttonMultiply"
+        android1:text="@string/clear" />
+
+    <Button
+        android1:id="@+id/buttonDivide"
+        android1:layout_width="wrap_content"
+        android1:layout_height="wrap_content"
+        android1:layout_below="@+id/buttonMinus"
+        android1:layout_toRightOf="@+id/buttonClear"
+        android1:layout_toEndOf="@+id/buttonClear"
+        android1:text="@string/divide" />
+
+</RelativeLayout>

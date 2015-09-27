@@ -1,0 +1,38 @@
+package com.cs399.calculator;
+
+import android.app.Activity;
+import android.graphics.Point;
+import android.os.Bundle;
+import android.view.Display;
+import android.view.Menu;
+import android.widget.TextView;
+
+public class CalculatorActivity extends Activity 
+{
+	TextView text;
+	String currentValue, nextValue;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        
+        text = new TextView(this);
+        text.setClickable(false);
+        
+        Display display = this.getWindowManager().getDefaultDisplay();
+        Point size = new Point();
+        display.getSize(size);
+        text.setWidth(size.x);
+        text.setHeight(size.y);
+        setContentView(R.layout.activity_calculator);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) 
+    {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.calculator, menu);
+        return true;
+    }
+}

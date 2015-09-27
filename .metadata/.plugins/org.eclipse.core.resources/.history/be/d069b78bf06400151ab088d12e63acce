@@ -1,0 +1,38 @@
+package com.cs399.calculator;
+
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.Menu;
+import android.view.View;
+
+public class CalculatorActivity extends Activity 
+{
+	String current;
+	
+    @Override
+    protected void onCreate(Bundle savedInstanceState) 
+    {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_calculator);
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) 
+    {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.calculator, menu);
+        return true;
+    }
+    
+    public void add1(View view)
+    {	current += "1";}
+    
+    public void add2(View view)
+    {	current += "2";}
+    
+    public void add3(View view)
+    {	current += "3";}
+    
+    public void add4(View view)
+    {	current += "4";}
+}
